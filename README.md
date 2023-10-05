@@ -1,4 +1,21 @@
-GitHub Copilot: Sure, here's the Markdown you can insert into your README:
+# TaskMaster: Next.js Task Management Component
+
+TaskMaster is a dynamic task management component built with Next.js. Seamlessly create, update, or delete tasks with an intuitive user interface. Integrating with an API backend, TaskMaster ensures data persistence and real-time synchronization. Whether you're managing daily chores or business operations, TaskMaster is designed to keep you organized and efficient.
+
+## Features
+
+- Create, update, and delete tasks
+- Real-time synchronization with API backend
+- Intuitive user interface
+- Built with Next.js and React
+- Data persistence with API backend
+
+## Installation
+
+To install TaskMaster, run the following command:
+
+```bash
+npm install taskmaster
 
 ## `NewTask` Component
 
