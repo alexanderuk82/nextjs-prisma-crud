@@ -16,8 +16,9 @@ To install TaskMaster, run the following command:
 
 ```bash
 npm install taskmaster
+```
 
-## `NewTask` Component
+### `NewTask` Component
 
 This React component provides functionality to create or update tasks. It integrates with an API for data persistence.
 
