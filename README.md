@@ -1,68 +1,68 @@
-# Next.js Task Manager
+NewTask Component
+This React component provides functionality to create or update tasks. It integrates with an API for data persistence.
 
-This project is a Task Manager built with Next.js, utilizing Prisma for data handling, SWR for data fetching, and Vercel for deployment. It's backed by a PostgreSQL database. The `NewTask` component allows for the creation, update, and deletion of tasks.
+Table of Contents
+Imports
+Functional Component
+State Management
+Data Fetching
+Form Submission
+Render
+Imports
+javascript
+Copy code
+import useSWR from 'swr';
+import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+useSWR: A React Hook library for remote data fetching.
+useRouter: Next.js hook for routing.
+useState, useEffect: React hooks for managing state and side effects.
+Back to Top
 
-## Installation
+Functional Component
+javascript
+Copy code
+export default function NewTask({ params }) {
+This component expects params as a prop which contains the id of the task. If id is present, it indicates an update operation.
 
-1. **Clone the repository:**
+Back to Top
 
-   ```bash
-   git clone https://github.com/your-username/your-repo.git
-   ```
+State Management
+javascript
+Copy code
+const [title, setTitle] = useState('');
+const [description, setDescription] = useState('');
+The component maintains the state for title and description using the useState hook.
 
-2. **Navigate to the project directory:**
+Back to Top
 
-   ```bash
-   cd your-repo
-   ```
+Data Fetching
+The component fetches task details if an id is provided.
 
-3. **Install the dependencies:**
+javascript
+Copy code
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const { data, error } = useSWR(`/api/tasks/${id}`, fetcher);
+The useSWR hook is used here with a custom fetcher function.
 
-   ```bash
-   npm install
-   ```
+Back to Top
 
-4. **Set up your PostgreSQL database** and configure your `.env` file with the necessary environment variables for connecting to your database.
+Form Submission
+The form submission handles both the creation of a new task and the updating of an existing task.
 
-5. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
+javascript
+Copy code
+const onSubmit = async (e) => {
+// ... implementation
+};
+Back to Top
 
-## Usage
+Render
+The component renders a form which accepts the task title and description. Based on the presence of id in params, it either shows the "Update task" or "Create task" button. If id is present, a "Delete task" button is also displayed.
 
-### `NewTask` Component
-
-The `NewTask` component is used for creating and updating tasks. When a task is being updated, the `params` prop should include the `id` of the task.
-
-#### Props
-
-- `params`: An object that contains the `id` of the task being updated. If `params.id` is provided, the component will fetch the existing data for the task and populate the form fields.
-
-#### Example
-
-````jsx
-<NewTask params={{ id: 'task-id' }} />
-
-
-## API Routes
-
-- `GET /api/tasks/:id`: Fetches the data for a task with the given id.
-- `PUT /api/tasks/:id`: Updates the task with the given id.
-- `POST /api/tasks`: Creates a new task.
-- `DELETE /api/tasks/:id`: Deletes the task with the given id.
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
+Back to Top
 
 ## Starting the Project
-
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -78,7 +78,7 @@ yarn dev
 pnpm dev
 # or
 bun dev
-````
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
