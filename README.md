@@ -1,3 +1,69 @@
+# Next.js Task Manager
+
+This project is a Task Manager built with Next.js, utilizing Prisma for data handling, SWR for data fetching, and Vercel for deployment. It's backed by a PostgreSQL database. The `NewTask` component allows for the creation, update, and deletion of tasks.
+
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   ```
+
+2. **Navigate to the project directory:**
+
+   ```bash
+   cd your-repo
+   ```
+
+3. **Install the dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+4. **Set up your PostgreSQL database** and configure your `.env` file with the necessary environment variables for connecting to your database.
+
+5. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+## Usage
+
+### `NewTask` Component
+
+The `NewTask` component is used for creating and updating tasks. When a task is being updated, the `params` prop should include the `id` of the task.
+
+#### Props
+
+- `params`: An object that contains the `id` of the task being updated. If `params.id` is provided, the component will fetch the existing data for the task and populate the form fields.
+
+#### Example
+
+````jsx
+<NewTask params={{ id: 'task-id' }} />
+
+
+## API Routes
+
+- `GET /api/tasks/:id`: Fetches the data for a task with the given id.
+- `PUT /api/tasks/:id`: Updates the task with the given id.
+- `POST /api/tasks`: Creates a new task.
+- `DELETE /api/tasks/:id`: Deletes the task with the given id.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+## Starting the Project
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -12,7 +78,7 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+````
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

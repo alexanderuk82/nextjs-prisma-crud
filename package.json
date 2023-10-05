@@ -1,23 +1,32 @@
 {
-  "name": "nextjs-prisma-crud",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+  "author": "",
   "dependencies": {
+    "@prisma/client": "^5.3.1",
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "swr": "^2.2.4"
   },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
   "devDependencies": {
     "autoprefixer": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest"
-  }
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "prisma": "^5.3.1",
+    "tailwindcss": "latest"
+  },
+  "license": "ISC",
+  "main": "next.config.js",
+  "name": "c",
+  "private": true,
+  "scripts": {
+    "art": "next start",
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "postinstall": "prisma generate",
+    "start": "next start"
+  },
+  "version": "0.1.0"
 }
