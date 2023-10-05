@@ -1,66 +1,71 @@
-NewTask Component
+GitHub Copilot: Sure, here's the Markdown you can insert into your README:
+
+## `NewTask` Component
+
 This React component provides functionality to create or update tasks. It integrates with an API for data persistence.
 
-Table of Contents
-Imports
-Functional Component
-State Management
-Data Fetching
-Form Submission
-Render
-Imports
-javascript
-Copy code
+### Table of Contents
+
+- [Imports](#imports)
+- [Functional Component](#functional-component)
+- [State Management](#state-management)
+- [Data Fetching](#data-fetching)
+- [Form Submission](#form-submission)
+- [Render](#render)
+
+### Imports
+
+```javascript
 import useSWR from 'swr';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
-useSWR: A React Hook library for remote data fetching.
-useRouter: Next.js hook for routing.
-useState, useEffect: React hooks for managing state and side effects.
-Back to Top
+```
 
-Functional Component
-javascript
-Copy code
+- `useSWR`: A React Hook library for remote data fetching.
+- `useRouter`: Next.js hook for routing.
+- `useState`, `useEffect`: React hooks for managing state and side effects.
+
+### Functional Component
+
+```javascript
 export default function NewTask({ params }) {
-This component expects params as a prop which contains the id of the task. If id is present, it indicates an update operation.
+```
 
-Back to Top
+This component expects `params` as a prop which contains the `id` of the task. If `id` is present, it indicates an update operation.
 
-State Management
-javascript
-Copy code
+### State Management
+
+```javascript
 const [title, setTitle] = useState('');
 const [description, setDescription] = useState('');
-The component maintains the state for title and description using the useState hook.
+```
 
-Back to Top
+The component maintains the state for `title` and `description` using the `useState` hook.
 
-Data Fetching
-The component fetches task details if an id is provided.
+### Data Fetching
 
-javascript
-Copy code
+The component fetches task details if an `id` is provided.
+
+```javascript
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const { data, error } = useSWR(`/api/tasks/${id}`, fetcher);
-The useSWR hook is used here with a custom fetcher function.
+```
 
-Back to Top
+The `useSWR` hook is used here with a custom `fetcher` function.
 
-Form Submission
+### Form Submission
+
 The form submission handles both the creation of a new task and the updating of an existing task.
 
-javascript
-Copy code
+```javascript
 const onSubmit = async (e) => {
-// ... implementation
+  // ... implementation
 };
-Back to Top
+```
 
-Render
-The component renders a form which accepts the task title and description. Based on the presence of id in params, it either shows the "Update task" or "Create task" button. If id is present, a "Delete task" button is also displayed.
+### Render
 
-Back to Top
+The component renders a form which accepts the task title and description. Based on the presence of `id` in `params`, it either shows the "Update task" or "Create task" button. If `id` is present, a "Delete task" button is also displayed.
 
 ## Starting the Project
 
